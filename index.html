@@ -6,6 +6,8 @@
         <link rel="shortcut icon" href="favicondc.png" type="image/png"/>
         <link rel="stylesheet" href="css/normalize.css">
         <link href='https://fonts.googleapis.com/css?family=Vast+Shadow|Open+Sans:400,400italic,700,700italic,800' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="./fancy-box/fancybox.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="./fancy-box/helpers/fancybox-thumbs.css" type="text/css" media="screen" />
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/responsive.css">
     </head>
@@ -28,56 +30,56 @@
         <section>
         	<ul  id="gallery">
             	<li>
-                	<a href="img/mmdlogo.png" target="_blank">
+                	<a class="fancybox-thumb" rel="fancybox-thumb" href="img/mmdlogo.png" target="_blank" title="">
                 		<img src="img/mmd.png" alt="">
                    		<p>Comic Book Logo</p>
                     </a>
                 </li>
                 <li>
-                	<a href="img/bndlogo001c3d.png" target="_blank">
+                	<a class="fancybox-thumb" rel="fancybox-thumb" href="img/bndlogo001c3d.png" target="_blank">
                 		<img src="img/bndzoom.png" alt="">
                     	<p>B&D Communications Logo</p>
                     </a>
                 </li>
                 <li>
-                	<a href="img/inxpogb16_9.png" target="_blank">
+                	<a class="fancybox-thumb" rel="fancybox-thumb" href="img/inxpogb16_9.png" target="_blank">
                 		<img src="img/inxpobgzoom.png" alt="">
                     	<p>INXPO Logo</p>
                     </a>
                 </li>
                 <li>
-                	<a href="img/space.png" target="_blank">
+                	<a class="fancybox-thumb" rel="fancybox-thumb" href="img/space.png" target="_blank">
                 		<img src="img/spacezoom.png" alt="">
                     	<p>Deep Space</p>
                     </a>
                 </li>
                 <li>
-                	<a href="img/beardscience.jpg" target="_blank">
+                	<a class="fancybox-thumb" rel="fancybox-thumb" href="img/beardscience.jpg" target="_blank">
                 		<img src="img/bszoom.png" alt="">
                     	<p>Beard Science</p>
                     </a>
                 </li>
                 <li>
-                	<a href="img/xppp.png" target="_blank">
+                	<a class="fancybox-thumb" rel="fancybox-thumb" href="img/xppp.png" target="_blank">
                 		<img src="img/xxxpzoom.png" alt="">
                     	<p>Project Planning Flow Chart</p>
                     </a>
                 </li>
                 <h4>Videos</h4>
                 <li>
-                	<a href="https://www.youtube.com/watch?v=BQPjMOZUTXE" target="_blank">
+                	<a class="fancybox-media" href="https://www.youtube.com/watch?v=BQPjMOZUTXE">
                 		<img src="img/arh.png" alt="">
                    		<p>ARH Award</p>
                     </a>
                 </li>
                 <li>
-                	<a href="https://www.youtube.com/watch?v=6m43YAu2Jao" target="_blank">
+                	<a class="fancybox-media" href="https://www.youtube.com/watch?v=6m43YAu2Jao">
                 		<img src="img/lemur.png" alt="">
                     	<p>Red Ruffed Lemurs</p>
                     </a>
                 </li>
                 <li>
-                	<a href="https://www.youtube.com/watch?v=pwj4bhBNLgM" target="_blank">
+                	<a class="fancybox-media" href="https://www.youtube.com/watch?v=pwj4bhBNLgM">
                 		<img src="img/farmrain.png" alt="">
                     	<p>Farm Rain</p>
                     </a>
@@ -90,5 +92,33 @@
         	<p>&copy; 2016 Dave Crites.</p>
         </footer>
         </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="./fancy-box/jquery.fancybox.pack.js"></script>
+    <script type="text/javascript" src="./fancy-box/helpers/jquery.fancybox-media.js"></script>
+    <script type="text/javascript" src="./fancy-box/helpers/jquery.fancybox-thumbs.js"></script>
+    <script>
+    $(document).ready(function() {
+        $(".fancybox-thumb").fancybox({
+            prevEffect  : 'none',
+            nextEffect  : 'none',
+            helpers : {
+                title   : {
+                    type: 'outside'
+                },
+                thumbs  : {
+                    width   : 50,
+                    height  : 50
+                }
+            }
+        });
+        $('.fancybox-media').fancybox({
+            openEffect  : 'none',
+            closeEffect : 'none',
+            helpers : {
+                media : {}
+            }
+        });
+    });
+    </script>
     </body>
 </html>
